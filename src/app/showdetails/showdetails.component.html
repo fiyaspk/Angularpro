@@ -1,0 +1,22 @@
+
+<table align="center" width="50%" border="1">
+    <tr>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>gender</th>
+        <th>dob</th>
+        <th>email</th>
+        <th colspan="2">operations</th>
+    </tr>
+    <tr *ngFor="let x of data index as i">
+        <td>{{x['f_name']}}</td>
+        <td>{{x['l_name']}}</td>
+        <td>{{x['gender']}}</td>
+        <td>{{x['dob']}}</td>
+        <td>{{x['email']}}</td>
+        <td><button class="btn btn-danger" (click)="delete(x.id)">Delete</button></td>
+        <td><button class="btn btn-primary">Update</button></td>
+        
+    </tr>
+</table>
+
