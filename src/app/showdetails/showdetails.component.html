@@ -15,8 +15,22 @@
         <td>{{x['dob']}}</td>
         <td>{{x['email']}}</td>
         <td><button class="btn btn-danger" (click)="delete(x.id)">Delete</button></td>
-        <td><button class="btn btn-primary">Update</button></td>
+        <td><button (click)="updatedata(x.id)" class="btn btn-primary">Update</button></td>
         
     </tr>
 </table>
-
+<div class="signup-form">
+    <ng-container *ngIf="show">
+        <form >
+            <div class="form-group">
+                <input type="text" class="form-control" name="f_name" [(ngModel)]="upd.f_name"><br>
+                <input type="text" class="form-control" name="l_name" [(ngModel)]="upd.l_name"><br>
+                male<input type="radio" name="gender" value="male" [(ngModel)]="upd.gender">
+                female<input type="radio" name="gender" value="female" [(ngModel)]="upd.gender"><br>
+                <input name="dob" class="form-control" [(ngModel)]="upd.dob"><br>
+                <input type="email" class="form-control" name="email"  placeholder="Email"  [(ngModel)]="upd.email"><br>
+                <button type="submit" class="btn btn-success" (click)="updt()">update</button><br><br>
+            </div>
+        </form>
+    </ng-container>
+</div>

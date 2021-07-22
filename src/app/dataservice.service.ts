@@ -22,4 +22,8 @@ export class DataserviceService {
     return this.client.delete('https://cybersquare.herokuapp.com/user/'+id)
       
   }
+  update(data:any){
+    console.log(data)
+    return this.client.put('https://cybersquare.herokuapp.com/user/',data) 
+}
 }
